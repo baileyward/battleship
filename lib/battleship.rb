@@ -60,7 +60,6 @@ class Battleship
         break
       end
 
-      ##############
       best_cell = @player_board.find_next_empty_space
       computer_hit = @player_board.take_shot(best_cell)
       if computer_hit == true
@@ -82,7 +81,6 @@ end
 puts "Welcome to BATTLESHIP!"
 puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
 
-# do gets and store in var
 loop do
   user_input = gets.chomp
   if user_input == 'p'

@@ -12,20 +12,16 @@ class Board
     (@characters[0]..@characters[@size - 1]).each do |letter|
       row = []
       (1..@size).each do |number|
-        # push each number onto the row array
         row << " "
       end
 
-      # push rows array onto the grid
       g << row
     end
-    # return grid
+
     g
   end
 
   def place_two_unit_ship(first_coord, second_coord)
-    #puts "Got 1st Coord: " + first_coord
-    #puts "Got 2nd Coord: " + second_coord
 
     fc_row = first_coord.split("")[0]
     fc_column = first_coord.split("")[1]
@@ -64,7 +60,6 @@ class Board
 
   def to_string
     puts "==========="
-    # print column labels
     header = (1..@size).to_a
     header.unshift('.')
     puts header.join(' ')
@@ -80,7 +75,6 @@ class Board
 
   def to_string_ships
     puts "==========="
-    # print column labels
     header = (1..@size).to_a
     header.unshift('.')
     puts header.join(' ')
@@ -113,7 +107,6 @@ class Board
   end
 
   def win?
-    # Are all the "S" gone?
     win = true
     @grid.each do |row|
       row.each do |column|
